@@ -13,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -44,11 +45,10 @@ public class Funcionario implements Serializable {
 	@Column(name = "data_saida", columnDefinition = "DATE")
 	private LocalDate dataSaida;
 
-	// operacoes de CRUD refeletem no objeto Endereco
-
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "endereco_id_fk")
-	private Endereco endereco;
+	//Operações de CRUD refletem no objeto Endereco
+		@OneToOne(cascade = CascadeType.ALL)
+		@JoinColumn(name = "endereco_id_fk")
+		private Endereco endereco;
 
 	@ManyToOne
 	@JoinColumn(name = "cargo_id_fk")

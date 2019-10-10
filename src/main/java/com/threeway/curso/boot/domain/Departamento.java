@@ -15,15 +15,14 @@ import javax.persistence.Table;
 @Entity
 @Table(name="DEPARTAMENTOS")
 public class Departamento implements Serializable{
-	
 	@Id
-	@GeneratedValue(strategy =GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "name", nullable = false, unique = true, length = 60)
+	@Column(name = "nome", nullable = false, unique = true, length = 60)
 	private String nome;
 	
-	//relacionamento bidirecional controlado pelo lado forte 'departamentos' (lado que controla)
+	//relacionamento bidirecional controlado pelo lado forte 'departamento'
 	@OneToMany(mappedBy = "departamento")
 	private List<Cargo> cargos;
 
