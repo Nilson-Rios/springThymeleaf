@@ -45,10 +45,10 @@ public class Funcionario implements Serializable {
 	@Column(name = "data_saida", columnDefinition = "DATE")
 	private LocalDate dataSaida;
 
-	//Operações de CRUD refletem no objeto Endereco
-		@OneToOne(cascade = CascadeType.ALL)
-		@JoinColumn(name = "endereco_id_fk")
-		private Endereco endereco;
+	// Operações de CRUD refletem no objeto Endereco
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "endereco_id_fk")
+	private Endereco endereco;
 
 	@ManyToOne
 	@JoinColumn(name = "cargo_id_fk")
@@ -110,5 +110,4 @@ public class Funcionario implements Serializable {
 		this.cargo = cargo;
 	}
 
-	
 }

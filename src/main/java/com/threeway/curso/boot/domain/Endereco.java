@@ -21,7 +21,7 @@ public class Endereco implements Serializable{
 	private Long id;
 	
 	@Column(nullable = false)
-	private Long logradouro;
+	private String logradouro;
 	
 	@Column(nullable = false)
 	private String bairro;
@@ -49,11 +49,12 @@ public class Endereco implements Serializable{
 		this.id = id;
 	}
 
-	public Long getLogradouro() {
+
+	public String getLogradouro() {
 		return logradouro;
 	}
 
-	public void setLogradouro(Long logradouro) {
+	public void setLogradouro(String logradouro) {
 		this.logradouro = logradouro;
 	}
 
