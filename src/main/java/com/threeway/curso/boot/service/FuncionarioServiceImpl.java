@@ -22,7 +22,13 @@ public class FuncionarioServiceImpl implements FuncionarioService{
 	}
 
 	@Override
-	public void editar(Funcionario funcionario) {
+	public void editar(Funcionario funcionario) throws Exception {
+		if(funcionario.getDataSaida() ==null) {
+			dao.update(funcionario);
+		}else{
+			throw new Exception("O funcionario não pode ser editado");
+		}
+		
 		dao.update(funcionario);
 	}
 
@@ -41,6 +47,12 @@ public class FuncionarioServiceImpl implements FuncionarioService{
 	@Transactional(readOnly = true)
 	public List<Funcionario> buscarTodos() {
 		return dao.findAll();
+	}
+
+	@Override
+	public List<Funcionario> buscarPorNome(String nome) {
+		// TODO Auto-generated method stub
+		return dao.findByName(nome);
 	}
 
 	

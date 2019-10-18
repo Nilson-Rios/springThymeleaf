@@ -42,7 +42,7 @@ public class CargoController {
 	public String salvar(Cargo cargo, RedirectAttributes redirectAttributes) {
 		cargoService.salvar(cargo);
 		redirectAttributes.addFlashAttribute("success", "Cargo incluido com sucesso");
-		return "redirect:/cargos/cadastrar";
+		return "redirect:/cargos/listar";
 
 	}
 

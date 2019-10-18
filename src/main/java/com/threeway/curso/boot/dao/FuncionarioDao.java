@@ -11,6 +11,6 @@ public interface FuncionarioDao {
 	void delete (Long id);
 	Funcionario findById(Long id);
 	List<Funcionario> findAll();
-	//List<Funcionario> findByNome(String nome);
+	List<Funcionario> findByName(String nome);
 	
 }
